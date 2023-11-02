@@ -1,0 +1,57 @@
+﻿@model DataPassVtoC.Models.Employee
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <section>
+            <h4>Pass data using parameter</h4>
+            @using (Html.BeginForm("PostUsingParameter", "Home"))
+            {
+                <input type="text" name="firstName" /><br />
+                <input type="text" name="lastName" /><br />
+                <br />
+                <input type="submit" value="Cick me" />
+            }
+        </section>
+        <hr />
+        <section>
+            <h4>Pass data using Request</h4>
+            @using (Html.BeginForm("PostUsingRequest", "Home"))
+            {
+                <input type="text" name="firstName" /><br />
+                <input type="text" name="lastName" /><br />
+                <br />
+                <input type="submit" value="Cick me" />
+            }
+        </section>
+        <hr />
+        <section>
+            <h4>Pass data using Form Collection</h4>
+            @using (Html.BeginForm("PostUsingFormCollection", "Home"))
+            {
+                <input type="text" name="firstName" /><br />
+                <input type="text" name="lastName" /><br />
+                <br />
+                <input type="submit" value="Cick me" />
+            }
+        </section>
+        <hr />
+        <section>
+            <h4>Pass data using Form Model</h4>
+            @using (Html.BeginForm("PostUsingStronglyBinding", "Home",FormMethod.Post))
+            {
+               @Html.TextBoxFor(x=>x.firstName)<br />
+               @Html.TextBoxFor(x=>x.lastName)<br />
+                <br />
+                <input type="submit" value="Cick me" />
+            }
+        </section>
+    </div>
+</body>
+</html>
